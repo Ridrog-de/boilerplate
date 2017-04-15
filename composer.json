@@ -1,0 +1,43 @@
+{
+    "name": "ridrog/boilerplate",
+    "description": "Boilerplate for Laravel Packages",
+    "type": "package",
+    "keywords": ["laravel","package", "package development"],
+    "homepage" : "https://github.com/:vendor/:package_name",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ridrog",
+            "email": "michael@ridrog.de"
+        }
+    ],
+    "require": {
+        "php": ">=5.6",
+        "laravel/framework": "5.4.*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "~3.4.0",
+        "phpunit/phpunit" : "^5.7.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ridrog\\Boilerplate\\": "src/"
+        }
+    },
+
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload-dev": {
+        "psr-4": {
+            "Ridrog\\Boilerplate\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "testbench": "composer require --dev \"orchestra/testbench-browser-kit=~3.4\" \"orchestra/database=~3.4\""
+    },
+    "config": {
+        "sort-packages": true
+    }
+
+}
