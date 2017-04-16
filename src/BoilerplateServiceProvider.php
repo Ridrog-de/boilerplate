@@ -31,6 +31,8 @@ class BoilerplateServiceProvider extends ServiceProvider
 
         $this->publishConfig();
 
+
+
         $this->loadRoutes();
 
         $this->views();
@@ -77,6 +79,14 @@ class BoilerplateServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/config.php' => config_path($this->packageName.'.php')
         ], $this->packageName.'-config');
+    }
+
+    public function publishAssets()
+    {
+        $this->publishes([
+            __DIR__.'/Resources/Assets' => public_path('boilerplate'),
+           // more folders
+        ], $this->packageName.'-assets');
     }
 
     public function defineMiddleware()

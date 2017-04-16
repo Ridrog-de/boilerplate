@@ -18,6 +18,7 @@
 - [Translation](/details/translations.md)
 - [Events](/details/events.md)
 - [Notifications](/details/notifications.md)
+- [Assets](/details/assets.md)
 
 
 
