@@ -1,6 +1,6 @@
 <?php
 
-namespace Ridrog\Boilerplate;
+namespace Ridrog\Boilerplate\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

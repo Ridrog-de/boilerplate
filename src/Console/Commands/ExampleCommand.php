@@ -71,6 +71,11 @@ class ExampleCommand extends Command
         $this->askForConfirmation();
     }
 
+    /**
+     * Examlpe ask for Someting
+     *
+     * @return string
+     */
     public function askForName()
     {
         return $this->ask('What is your name?');
@@ -85,6 +90,9 @@ class ExampleCommand extends Command
         }
     }
 
+    /**
+     * Example Print a Table
+     */
     public function printTable()
     {
         $headers = ['Name', 'Email'];
@@ -94,6 +102,9 @@ class ExampleCommand extends Command
         $this->table($headers, $users);
     }
 
+    /**
+     * Example Progressbar
+     */
     public function showProgressBar()
     {
         $users = \App\User::all();

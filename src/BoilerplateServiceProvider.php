@@ -2,7 +2,6 @@
 
 namespace Ridrog\Boilerplate;
 
-
 // Commands
 use Ridrog\Boilerplate\Console\Commands\ExampleCommand;
 
@@ -18,6 +17,11 @@ use Illuminate\Support\ServiceProvider;
 
 class BoilerplateServiceProvider extends ServiceProvider
 {
+    /**
+     * Name of the Package
+     *
+     * @var string
+     */
     public $packageName = 'boilerplate';
 
     /**
@@ -31,7 +35,7 @@ class BoilerplateServiceProvider extends ServiceProvider
 
         $this->publishConfig();
 
-
+        $this->publishAssets();
 
         $this->loadRoutes();
 
@@ -64,6 +68,9 @@ class BoilerplateServiceProvider extends ServiceProvider
         $this->app->bind('boilerplate', 'Ridrog\Boilerplate\Boilerplate');
     }
 
+    /**
+     * Define Commands
+     */
     public function defineCommands()
     {
         if ($this->app->runningInConsole()) {
@@ -74,6 +81,9 @@ class BoilerplateServiceProvider extends ServiceProvider
         }
     }
 
+    /**
+     * Merge and publish Config
+     */
     public function publishConfig()
     {
         $this->publishes([
@@ -81,6 +91,9 @@ class BoilerplateServiceProvider extends ServiceProvider
         ], $this->packageName.'-config');
     }
 
+    /**
+     * Publish Assets
+     */
     public function publishAssets()
     {
         $this->publishes([
@@ -89,16 +102,25 @@ class BoilerplateServiceProvider extends ServiceProvider
         ], $this->packageName.'-assets');
     }
 
+    /**
+     * Define Middleware
+     */
     public function defineMiddleware()
     {
         app('router')->aliasMiddleware('example', ExampleMiddleWare::class);
     }
 
+    /**
+     * Load Routes
+     */
     public function loadRoutes()
     {
         $this->loadRoutesFrom(__DIR__.'/Http/routes.php');
     }
 
+    /**
+     * Load and publish Routes
+     */
     public function views()
     {
         $this->loadViewsFrom(__DIR__.'/Views', $this->packageName);
@@ -108,6 +130,9 @@ class BoilerplateServiceProvider extends ServiceProvider
         ], $this->packageName.'-views');
     }
 
+    /**
+     * Load and Publish Migrations
+     */
     public function migrations()
     {
         $this->loadMigrationsFrom(__DIR__.'/Database/Migrations');
@@ -117,6 +142,9 @@ class BoilerplateServiceProvider extends ServiceProvider
         ], $this->packageName.'-migrations');
     }
 
+    /**
+     * Load and Publish Translations
+     */
     public function translations()
     {
         $this->loadTranslationsFrom(__DIR__.'/Resources/Lang', $this->packageName);
@@ -126,6 +154,9 @@ class BoilerplateServiceProvider extends ServiceProvider
         ], $this->packageName.'-translations');
     }
 
+    /**
+     * Listen for Events and Fire one
+     */
     public function listenForEvents()
     {
         Event::listen(BoilerplateEvent::class, BoilerplateListener::class);
