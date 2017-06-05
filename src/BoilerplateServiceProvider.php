@@ -4,6 +4,7 @@ namespace Ridrog\Boilerplate;
 
 // Commands
 use Ridrog\Boilerplate\Console\Commands\ExampleCommand;
+use Ridrog\Boilerplate\Console\Commands\TestCommand;
 
 // Middleware
 use Ridrog\Boilerplate\Http\Middleware\ExampleMiddleWare;
@@ -76,6 +77,7 @@ class BoilerplateServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->commands([
                 ExampleCommand::class,
+                TestCommand::class,
                 // more
             ]);
         }
