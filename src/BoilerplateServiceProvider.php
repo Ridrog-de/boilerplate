@@ -61,7 +61,7 @@ class BoilerplateServiceProvider extends ServiceProvider
          * If your users partially define a multi-dimensional configuration array, the missing options will not be merged.
          */
         $this->mergeConfigFrom(
-            __DIR__.'/config.php', $this->packageName
+            __DIR__.'/../config/boilerplate.php', $this->packageName
         );
 
         $this->defineMiddleware();
@@ -89,7 +89,7 @@ class BoilerplateServiceProvider extends ServiceProvider
     public function publishConfig()
     {
         $this->publishes([
-            __DIR__.'/config.php' => config_path($this->packageName.'.php')
+            __DIR__.'/../config/boilerplate.php' => config_path($this->packageName.'.php')
         ], $this->packageName.'-config');
     }
 
