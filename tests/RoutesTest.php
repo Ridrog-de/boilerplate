@@ -2,6 +2,7 @@
 
 namespace Ridrog\Boilerplate\Test;
 
+use Ridrog\Boilerplate\Test\TestCase as TestCase;
 
 class RoutesTest extends TestCase
 {

@@ -4,6 +4,7 @@ namespace Ridrog\Boilerplate\Test;
 
 use Illuminate\Support\Facades\Artisan;
 use Ridrog\Boilerplate\BoilerplateServiceProvider;
+use Ridrog\Boilerplate\Test\TestCase as TestCase;
 
 class CommandTest extends TestCase
 {
