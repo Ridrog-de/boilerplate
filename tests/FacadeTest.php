@@ -7,7 +7,7 @@ use Illuminate\Support\ServiceProvider;
 use Ridrog\Boilerplate\BoilerplateServiceProvider;
 use Ridrog\Boilerplate\Test\TestCase as TestCase;
 
-class BoilerplateTest extends TestCase
+class FacadeTest extends TestCase
 {
 
     /**
