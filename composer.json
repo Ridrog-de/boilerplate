@@ -35,6 +35,16 @@
             "Ridrog\\Boilerplate\\Test\\": "tests"
         }
     },
+    "extras" : {
+        "laravel" : {
+            "providers" : [
+                "Ridrog\\Boilerplate\\BoilerplateServiceProvider"
+            ],
+            "aliases" : {
+                "Boilerplate" : "Ridrog\\Boilerplate\\Facades\\BoilerplateFacade"
+            }
+        }
+    },
     "scripts": {
         "test": "phpunit",
         "testbench": "composer require --dev \"orchestra/testbench-browser-kit=~3.4\" \"orchestra/database=~3.4\""
