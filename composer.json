@@ -35,7 +35,7 @@
             "Ridrog\\Boilerplate\\Test\\": "tests"
         }
     },
-    "extras" : {
+    "extra" : {
         "laravel" : {
             "providers" : [
                 "Ridrog\\Boilerplate\\BoilerplateServiceProvider"
