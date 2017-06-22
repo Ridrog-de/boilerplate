@@ -23,4 +23,9 @@ in case of vulnerabilities.
 ## dev-master - 2017-04-13
 - start
 
+## 0.0.4 - 2017-06-22
+
+### Added
+- Package auto discovery for Laravel 5.5
+
 
