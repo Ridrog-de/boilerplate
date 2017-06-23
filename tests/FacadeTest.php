@@ -3,6 +3,7 @@
 namespace Ridrog\Boilerplate\Test;
 
 use Ridrog\Boilerplate\Boilerplate;
+use Ridrog\Boilerplate\Facades\BoilerplateFacade;
 use Illuminate\Support\ServiceProvider;
 use Ridrog\Boilerplate\BoilerplateServiceProvider;
 use Ridrog\Boilerplate\Test\TestCase as TestCase;
@@ -38,11 +39,26 @@ class FacadeTest extends TestCase
     }
 
     /** @test */
-    public function it_returns_hello()
+    public function test_the_facade()
+    {
+        $hello = BoilerplateFacade::hello();
+
+        $this->assertTrue($hello === "hello");
+    }
+
+    /** @test */
+    public function test_the_class()
     {
         $boilerplate = new Boilerplate();
 
         $this->assertTrue($boilerplate->hello() === "hello");
     }
 
+    /** @test */
+    public function test_the_helper()
+    {
+        $boilerplate = boilerplate();
+
+        $this->assertTrue($boilerplate->hello() === "hello");
+    }
 }
