@@ -47,7 +47,7 @@
     },
     "scripts": {
         "test": "phpunit",
-        "testbench": "composer require --dev \"orchestra/testbench-browser-kit=~3.4\" \"orchestra/database=~3.4\""
+        "testbench": "composer require --dev \"orchestra/testbench-browser-kit=~3.5\" \"orchestra/database=~3.5\""
     },
     "config": {
         "sort-packages": true
